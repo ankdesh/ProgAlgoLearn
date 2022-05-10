@@ -13,7 +13,24 @@ vector<string> split(const string &);
  */
 
 void plusMinus(vector<int> arr) {
-
+    int count_plus = 0 , count_minus = 0, count_zero = 0;
+    for (auto &i:arr){
+        if (i > 0) {
+            count_plus++;
+        }
+        else if (i < 0){
+           count_minus++; 
+        } 
+        else {
+            count_zero++; 
+        }
+    }
+    int sum = count_plus + count_minus + count_zero;
+    std::cout.precision(6);
+    std::cout << std::fixed;
+    std::cout << float(count_plus)/float(sum) << std::endl;
+    std::cout << float(count_minus)/float(sum) << std::endl ;
+    std::cout << float(count_zero)/float(sum) << std::endl;
 }
 
 int main()
